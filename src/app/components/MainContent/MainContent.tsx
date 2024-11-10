@@ -8,6 +8,7 @@ import LoginButton from '../LoginButton/LoginButton';
 import UserManagement from '../UserManagement/UserManagement';
 import UserProfile from '../UserProfile/UserProfile';
 import CreatePost from '../CreatePost/CreatePost';
+import PostReview from '../PostReview/PostReview';
 
 const MainContent = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -105,6 +106,7 @@ const MainContent = () => {
     return <div className={styles.loading}>Loading...</div>;
   }
 
+  // Update the content section in MainContent.tsx
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>JournalSoc</h1>
@@ -112,7 +114,12 @@ const MainContent = () => {
       {user ? (
         <div className={styles.content}>
           <UserProfile user={user} />
-          {profile?.roles.includes('admin') && <UserManagement currentUser={user} />}
+          {profile?.roles.includes('admin') && (
+            <>
+              <UserManagement currentUser={user} />
+              <PostReview />
+            </>
+          )}
           {canWrite && (
             <button onClick={() => setShowCreatePost(true)} className={styles.writeButton}>
               Write Post
@@ -128,7 +135,7 @@ const MainContent = () => {
           <CreatePost
             onClose={() => {
               setShowCreatePost(false);
-              fetchPosts(); // Refresh posts after creating a new one
+              fetchPosts();
             }}
           />
         </div>
