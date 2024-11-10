@@ -1,0 +1,55 @@
+.editor {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  background: white;
+}
+
+.toolbar {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  background: #f8f8f8;
+  display: flex;
+  gap: 8px;
+}
+
+.toolbar button {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toolbar button:hover {
+  background: #f0f0f0;
+}
+
+.toolbar button.active {
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+.content {
+  padding: 16px;
+  min-height: 300px;
+}
+
+.content :global(.ProseMirror) {
+  outline: none;
+}
+
+.content :global(.ProseMirror) p {
+  margin: 0 0 1em 0;
+}
+
+.content :global(.ProseMirror) h2 {
+  margin: 1.5em 0 0.5em;
+}
+
+.editorImage {
+  max-width: 100%;
+  height: auto;
+  margin: 1em 0;
+}
