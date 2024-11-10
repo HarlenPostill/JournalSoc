@@ -1,0 +1,22 @@
+.loginButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: #f5f5f5;
+}
+
+.loginButton svg {
+  width: 20px;
+  height: 20px;
+}
